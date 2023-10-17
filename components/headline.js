@@ -1,10 +1,10 @@
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Vercel from "@/components/vercel.js";
+import { Vercel } from "@/components/vercel.js";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Headline(props) {
+export function Headline(props) {
   return (
     <>
       <div className={styles.description}>
