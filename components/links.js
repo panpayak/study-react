@@ -3,7 +3,7 @@ import styles from "./links.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Link() {
+export function Links() {
   return (
     <div className={styles.grid}>
       <a

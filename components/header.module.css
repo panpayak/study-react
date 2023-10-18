@@ -1,0 +1,29 @@
+.header {
+  border-bottom: 1px solid #eaeaea;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.anchor {
+  display: inline-block;
+  padding: 8px 24px;
+  font-size: 1.2rem;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .anchor:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .header {
+    margin-top: 70px;
+  }
+}
