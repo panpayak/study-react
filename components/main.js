@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import styles from "./main.module.css";
 import { Link } from "../components/links.js";
 import { Headline}  from "@/components/headline.js";
 
