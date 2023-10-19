@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import styles from "./headline.module.css";
-import { Vercel } from "@/components/vercel.js";
+import { Vercel } from "@/components/vercel.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
