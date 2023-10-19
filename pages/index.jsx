@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import Main from "@/components/main.jsx";
 import { Header } from "@/components/header.jsx";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +13,16 @@ export default function Home() {
     console.log(e.target.href);
     e.preventDefault();
     alert(foo);
+  }, []);
+
+  useEffect(() => {
+    // マウント
+    document.body.style.backgroundColor = "lightblue";
+
+    // アンマウント
+    return () => {
+      document.body.style.backgroundColor = "";
+    };
   }, []);
 
   return (
