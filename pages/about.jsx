@@ -11,9 +11,7 @@ export default function Home() {
       <Head>
         <title>About Page</title>
       </Head>
-
       <Header />
-
       <Main page="about" />
     </>
   );
