@@ -2,18 +2,16 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import Main from "@/components/main.jsx";
 import { Header } from "@/components/header.jsx";
-import { useCallback, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const foo = 1;
+  const [count, setCount] = useState(1);
 
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
-  }, []);
+  const handleClick = (e) => {
+    setCount((count) => count + 1);
+  };
 
   useEffect(() => {
     // マウント
@@ -31,9 +29,8 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <a href="/about" onClick={handleClick}>
-        ボタン
-      </a>
+      <h1>{count}</h1>
+      <button onClick={handleClick}>ボタン</button>
       <Main page="index" />
     </>
   );
