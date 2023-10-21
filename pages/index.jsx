@@ -2,54 +2,20 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import Main from "@/components/main.jsx";
 import { Header } from "@/components/header.jsx";
-import { useCallback, useEffect, useState } from "react";
+import { useCounter } from "@/hooks/useCounter";
+import { useInputArray } from "@/hooks/useInputArray";
+import { useBg } from "@/hooks/useBg";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export default function Home() {
-  const [count, setCount] = useState(1);
-  const [text, setText] = useState("");
-  const [isShow, setIsShow] = useState(true);
-  const [array, setArray] = useState([]);
+  const { count, isShow, handleClick, handleDisplay } = useCounter();
+  const { text, array, handleChange, handleAdd } = useInputArray();
+  useBg();
 
-  const handleClick = useCallback(() => {
-    if (count < 10) {
-      setCount((prevCount) => prevCount + 1);
-    }
-  }, [count]);
-
-  const handleChange = useCallback((e) => {
-    if (e.target.value.length > 5) {
-      alert("５文字以内にしてください");
-      return;
-    }
-    setText(e.target.value.trim().toLowerCase());
-  }, []);
-
-  const handleDisplay = useCallback(() => {
-    setIsShow((prevIsShow) => !prevIsShow);
-  }, []);
-
-  const handleAdd = useCallback(() => {
-    setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
-        alert("同じものがすでに存在します");
-        return prevArray;
-      }
-      return [...prevArray, text];
-    });
-  }, [text]);
-
-  useEffect(() => {
-    // マウント
-    document.body.style.backgroundColor = "lightblue";
-
-    // アンマウント
-    return () => {
-      document.body.style.backgroundColor = "";
-    };
-  }, []);
-
+  
   return (
     <>
       <Head>
