@@ -9,8 +9,8 @@ export function Headline(props) {
     <>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>pages/{props.page}.js</code>
+          アイテムの数は
+          <code className={styles.code}>{props.items}個です</code>
         </p>
 
         <Vercel />
@@ -18,6 +18,7 @@ export function Headline(props) {
 
       <div className={styles.center}>
         <h1>{props.page} Page</h1>
+        <button onClick={props.handleReduce}>減らす</button>
       </div>
     </>
   );
