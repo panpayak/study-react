@@ -14,7 +14,7 @@ const Home = (props) => {
       <Header />
       {props.isShow ? <h1>{props.count}</h1> : null}
       <button onClick={props.handleDisplay}>
-        {props.sShow ? "非表示" : "表示"}
+        {props.isShow ? "非表示" : "表示"}
       </button>
       <button onClick={props.handleClick}>ボタン</button>
       <input type="text" value={props.text} onChange={props.handleChange} />
