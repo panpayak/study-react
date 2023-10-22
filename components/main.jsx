@@ -30,7 +30,7 @@ const ITEMS = [
   },
 ];
 
-export default function Main(props) {
+export const Main = (props) => {
   const [items, setItems] = useState(ITEMS);
 
   const handleReduce = useCallback(() => {
@@ -41,9 +41,13 @@ export default function Main(props) {
 
   return (
     <main className={`${styles.main} ${inter.className}`}>
-      <Headline page={props.page} handleReduce={handleReduce} items={items.length}/>
+      <Headline
+        page={props.page}
+        handleReduce={handleReduce}
+        items={items.length}
+      />
 
       <Links items={items} />
     </main>
   );
-}
+};

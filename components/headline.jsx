@@ -4,7 +4,7 @@ import { Vercel } from "@/components/vercel.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Headline(props) {
+export const Headline = (props) => {
   return (
     <>
       <div className={styles.description}>

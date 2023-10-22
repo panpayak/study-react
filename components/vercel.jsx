@@ -4,7 +4,7 @@ import styles from "./vercel.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export function Vercel() {
+export const Vercel = () => {
   return (
     <div>
       <a
@@ -24,4 +24,4 @@ export function Vercel() {
       </a>
     </div>
   );
-}
+};

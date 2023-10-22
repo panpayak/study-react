@@ -4,7 +4,7 @@ import { useBgColor } from "@/hooks/useBgColor";
 import "@/styles/globals.css";
 import Head from "next/head";
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   const counter = useCounter();
   const inputArray = useInputArray();
   useBgColor();
@@ -15,4 +15,6 @@ export default function App({ Component, pageProps }) {
     <link rel="icon" href="/favicon.ico" />
   </Head>;
   return <Component {...pageProps} {...counter} {...inputArray} />;
-}
+};
+
+export default App;
